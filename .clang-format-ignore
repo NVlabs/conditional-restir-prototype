@@ -1,0 +1,16 @@
+Source/Falcor
+Source/Falcor/Core
+Source/Falcor/Internal
+Source/Falcor/RenderGraph
+Source/Falcor/Rendering
+Source/Falcor/RenderPasses
+Source/Falcor/Scene
+Source/Falcor/Testing
+Source/Falcor/Utils
+Source/Internal
+Source/Internal/Modules
+Source/Internal/Tools
+Source/Mogwai
+Source/RenderPasses
+Source/Tools/FalcorTest
+Source/Tools/RenderGraphEditor

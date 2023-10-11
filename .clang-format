@@ -1,0 +1,63 @@
+# C++ formatting
+
+Language: Cpp
+BasedOnStyle: Chromium
+IndentWidth: 4
+ColumnLimit: 120
+AccessModifierOffset: -4
+SortIncludes: false
+SortUsingDeclarations: false
+SpaceAfterTemplateKeyword: false
+DerivePointerAlignment: false
+PointerAlignment: Left
+FixNamespaceComments: true
+
+AllowAllConstructorInitializersOnNextLine: true
+BreakConstructorInitializers: BeforeComma
+AlwaysBreakTemplateDeclarations: true
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortEnumsOnASingleLine: true
+BreakBeforeBraces: Allman
+IndentCaseLabels: false
+
+ReflowComments: true
+CommentPragmas: '^\\.+'
+SpacesBeforeTrailingComments: 1
+PenaltyBreakComment: 0
+AlignAfterOpenBracket: BlockIndent
+IndentPPDirectives: BeforeHash
+PenaltyReturnTypeOnItsOwnLine: 100000
+PenaltyBreakTemplateDeclaration: 100000
+
+---
+
+# Slang formatting
+
+Language: CSharp
+BasedOnStyle: Chromium
+IndentWidth: 4
+ColumnLimit: 120
+AccessModifierOffset: -4
+SortIncludes: false
+SortUsingDeclarations: false
+SpaceAfterTemplateKeyword: false
+DerivePointerAlignment: false
+PointerAlignment: Left
+FixNamespaceComments: true
+
+AllowAllConstructorInitializersOnNextLine: true
+BreakConstructorInitializers: BeforeComma
+AlwaysBreakTemplateDeclarations: true
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortEnumsOnASingleLine: true
+BreakBeforeBraces: Allman
+IndentCaseLabels: false
+
+ReflowComments: true
+CommentPragmas: '^\\.+'
+SpacesBeforeTrailingComments: 1
+PenaltyBreakComment: 0
+AlignAfterOpenBracket: BlockIndent
+IndentPPDirectives: BeforeHash
+PenaltyReturnTypeOnItsOwnLine: 100000
+PenaltyBreakTemplateDeclaration: 100000
