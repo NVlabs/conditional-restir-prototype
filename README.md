@@ -17,7 +17,7 @@ See [README_Falcor.md](README_Falcor.md) for the original README file provided b
 
 ## Licensing
 
-The new conditional resampling code in this repository is [licensed][LICENSE.md] under the NVIDIA Source Code License.  Included NVIDIA dependencies remain licensed under their existing licenses, including:  [Falcor](https://github.com/NVIDIAGameWorks/Falcor/blob/master/LICENSE.md), [DLSS](https://github.com/NVIDIA/DLSS/blob/main/LICENSE.txt), [RTXGI](https://github.com/NVIDIAGameWorks/RTXGI/blob/main/License.txt), [RTXDI](https://github.com/NVIDIAGameWorks/RTXDI/blob/main/LICENSE.txt), and [NRD](https://github.com/NVIDIAGameWorks/RayTracingDenoiser/blob/master/LICENSE.txt).  
+The new conditional resampling code in this repository is [licensed](LICENSE.md) under the NVIDIA Source Code License.  Included NVIDIA dependencies remain licensed under their existing licenses, including:  [Falcor](https://github.com/NVIDIAGameWorks/Falcor/blob/master/LICENSE.md), [DLSS](https://github.com/NVIDIA/DLSS/blob/main/LICENSE.txt), [RTXGI](https://github.com/NVIDIAGameWorks/RTXGI/blob/main/License.txt), [RTXDI](https://github.com/NVIDIAGameWorks/RTXDI/blob/main/LICENSE.txt), and [NRD](https://github.com/NVIDIAGameWorks/RayTracingDenoiser/blob/master/LICENSE.txt).  
 
 Falcor also downloads various 3rd party dependencies as git submodules; these have their own licenses.
 
