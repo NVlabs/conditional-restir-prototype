@@ -11,7 +11,7 @@
 This prototype application of conditional ReSTIR defers ReSTIR-based path reuse by one or more bounces. It is based on conditional resampled importance sampling (CRIS) theory, an extension of GRIS [[Lin et al. 2022]](https://research.nvidia.com/publication/2022-07_generalized-resampled-importance-sampling-foundations-restir) to conditional path spaces that enables reusing subpaths from unidirectional-sampled paths with correct unbiased contribution weights. Our conditional ReSTIR prototype modifies ReSTIR PT [[Lin et al. 2022]](https://github.com/DQLin/ReSTIR_PT) with a final gather pass. As in photon mapping, such a final gather reduces blotchy artifacts from sample correlation.
 
 - The method is implemented as a rendering component called "ConditionalReSTIR" (`Source/Falcor/Rendering/ConditionalReSTIR`) in Falcor 5.2.
-See [README_Falcor.md](README_Falcor.md) for the original README file provided by Falcor.
+See [README-Falcor.md](README-Falcor.md) for the original README file provided by Falcor.
 - A script `runConditionalReSTIRDemo.bat` is provided to show how the method works VeachAjar scene (from [Benedikt Bitterli's rendering resources](https://benedikt-bitterli.me/resources/)) which is contained in the repo.
 - Before running the scripts, you need to compile the program and download the scene files following the instruction below.
 
