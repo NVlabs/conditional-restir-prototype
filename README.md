@@ -2,9 +2,9 @@
 ![](teaser.png)
 
 ## Introduction
-- This repo includes source code for the following SIGGRAPH Asia 2023 paper
+- This repo includes source code for the following [SIGGRAPH Asia 2023 paper](https://research.nvidia.com/labs/rtr/publication/kettunen2023conditional/)
 
-> **Conditional Resampled Importance Sampling and ReSTIR**<br>
+> **[Conditional Resampled Importance Sampling and ReSTIR](https://research.nvidia.com/labs/rtr/publication/kettunen2023conditional/)**<br>
 > Markus Kettunen* (NVIDIA), Daqi Lin* (NVIDIA), Ravi Ramamoorthi (NVIDIA and UC San Diego), Thomas Bashford-Rogers (University of Warwick),  Chris Wyman (NVIDIA)<br>
 > (*Joint first authors) <br>
 
