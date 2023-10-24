@@ -945,7 +945,7 @@ struct PathTracer
         restir.prefixPathReservoirs[offset] = 0.f;
 
         restir.prefixGBuffer[offset] = PrefixGBuffer();
-        restir.prefixReservoirs[offset] = PrefixReservoir(0, false, 0, 0, 0, 0, 1);
+        restir.prefixReservoirs[offset] = PrefixReservoir(0, false, 0, 0, 0, 0, 1.f / path.restirData.rrPdf);
 
         path.restirData.pathRis = PathRisState();
     }
@@ -964,14 +964,14 @@ struct PathTracer
         //
         bool prefixNeedRandomReplay = !restir.shiftMapping == (uint)ConditionalReSTIR::ShiftMapping::Reconnection &&
                                         !(lastVertexState.isLastVertexRough() && lastVertexState.isCurrentVertexFarFromPrev());
-        PrefixReservoir prefixReservoir = PrefixReservoir(lastVertexState.lastBSDFComponent(), prefixNeedRandomReplay, prefixRcJacobian, luminance(path.thp), pathFootprint);
+        PrefixReservoir prefixReservoir = PrefixReservoir(lastVertexState.lastBSDFComponent(), prefixNeedRandomReplay, prefixRcJacobian, luminance(path.thp), pathFootprint, 1.f / path.restirData.rrPdf);
 
         restir.prefixGBuffer[offset] = pgb;
         restir.prefixReservoirs[offset] = prefixReservoir;
 
         // store prefix throughput in a separate buffer
         PrefixInfo prefixInfo;
-        prefixInfo.thp = path.thp;
+        prefixInfo.thp = path.thp / path.restirData.rrPdf;
         restir.prefixThroughputs[offset] = prefixInfo;
 
         // write stuff to prefix reservoir (might just be empty)
@@ -984,6 +984,7 @@ struct PathTracer
         path.restirData.pathRcInfo.pathFlags.insertDeltaTransmissionBSDFEvent(false, false, 0, false); // clean this
         path.thp = 1.f;
         path.restirData.pathRcInfo.rcThroughput = 1.f;
+        path.restirData.rrPdf = 1.f;
         path.restirData.pathRcInfo.pathFlags.insertUserFlag(true); // indicate prefix is written
     }
 
@@ -1372,7 +1373,7 @@ struct PathTracer
         // Russian roulette to terminate paths early.
         if (kUseRussianRoulette)
         {
-            if (terminatePathByRussianRoulette(path, kUseRussianRoulette)) return;
+            if (terminatePathByRussianRoulette(path, uRussianRoulette)) return;
         }
 
         const bool wasDeltaOnlyPathBeforeScattering = path.isDeltaOnlyPath();

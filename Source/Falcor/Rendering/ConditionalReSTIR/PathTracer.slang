@@ -1246,7 +1246,7 @@ struct PathTracer
 
         // store prefix throughput in a separate buffer
         PrefixInfo prefixInfo;
-        prefixInfo.thp = path.thp;
+        prefixInfo.thp = path.thp / path.restirData.rrPdf;
         restir.prefixThroughputs[offset] = prefixInfo;
 
         // read prefix path reservoir
@@ -1261,6 +1261,7 @@ struct PathTracer
             path.restirData.pathRcInfo.pathFlags.insertDeltaTransmissionBSDFEvent(false, false, 0, false); // clean this
             path.thp = 1.f;
             path.restirData.pathRcInfo.rcThroughput = 1.f;
+            path.restirData.rrPdf = 1.f;
         }
 
         path.restirData.pathRcInfo.pathFlags.insertUserFlag(true); // indicate prefix is written
@@ -1618,9 +1619,8 @@ struct PathTracer
         // Russian roulette to terminate paths early.
         if (kUseRussianRoulette)
         {
-            if (terminatePathByRussianRoulette(path, kUseRussianRoulette)) return;
+            if (terminatePathByRussianRoulette(path, uRussianRoulette)) return;
         }
-        
 
         const bool wasDeltaOnlyPathBeforeScattering = path.isDeltaOnlyPath();
 
